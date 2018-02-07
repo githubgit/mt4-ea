@@ -1,0 +1,32 @@
+Amazing EA Troubleshooter
+
+Please check the following Thread on Forex Factory for News and Updates:-
+http://www.forexfactory.com/showthread.php?t=6854
+
+1) In Tools, Options, Expert Advisors, make sure you have checked 'Enable Expert Advisors' and 'Allow Live Trading'
+
+2) Drop AmazingEA onto a chart. You should see 'AmazingEA' in the top right hand corner of the chart with a Smiley Face next to it. If there is a cross instead, go back to Step 1.
+
+3) Click on the chart and press F7, or right-click on the chart and choose Expert Advisers, Properties.
+
+4) Setup the various parameters for the trade.
+
+5) In the top left corner of the chart there is a comment entitled 'Amazing Forex System Expert Advisor' 
+
+6) Near there, you can view various parameters and also compare the News Time with the Current Time.
+
+7) The NYear, NMonth, NDay, NHour, NMin, NSec parameters need to correspond to your Brokers time not your PC time, unless UseBrokerTime is set to false. If you set a date, you need to set all three date parameters NYear, NMonth and NDay. If you don't set the date, be aware that the EA will trade every day at the relevant time set by NHour, NMin and NSec.
+
+8) There is a hierarchy for SecBPO, SecBAO and SecBMO. SecBPO has to be greater or equal to SecBAO which has to be greater than SecBMO.
+
+9) When the Broker Time nearly coincides with the news time, the EA will place Pending Orders. SecBPO is how many seconds before the News that the orders are placed.
+
+10) If the pending orders are not placed, it is possible that 'Allow Live Trading' is not checked.
+
+11) If Only Long or Only Short orders are placed, then check the Common section of the EA Properties and ensure that it is allowed to open both 'Long & Short' positions.
+
+12) To install the EA and view the logfiles, from Build 600 onwards, within MT4 you choose 'File, Open Data Directory'.  Windows explorer will open with the current directory set to where all your MT4 data directories and logfiles are. In these instructions, I am going to refer to this directory as <MT4>. The first time you run Build 600, it copies the contents of the <MT4>\experts directory into <MT4>\MQL4 subdirectory. After that the experts directory isn't used and can be deleted, but the MQL4 one is used instead. To install the EA, copy the AmazingEA.mq4 file into the <MT4>\MQL4\Experts folder.
+
+13) The Data directories that were under the Program Files area where you installed MT4 are no longer used at all. 
+
+14) Check the 3 logfiles. The standard name is AmazingEA followed by the Currency Pair of the Chart, so for EURUSD it will be called 'AmazingEA-Log-EURUSD-2015-02-24.log'. A TickFile called 'AmazingEA-Ticks-EURUSD-2015-02-24.csv' will also be created containing Bid and Ask Prices and Spread Data. From Build 600 onwards, you will find this file in the <MT4>\MQL4\Files folder of your MT4 platform, with detailed explanations what took place while EA was running. There are 2 other logfiles named YYYYMMDD.log where YYYYMMDD is the current date e.g. 20130507.log. These are located in <MT4>\MQL4\Logs and <MT4>\logs.
