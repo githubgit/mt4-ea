@@ -1,0 +1,24 @@
+News Trader version 7.02  
+TODO List
+
+1. Implement automatic daylight savings during testing in MT4
+
+String[][] array = { { "30/03/2008 03:00", "26/10/2008 04:00" }, { "29/03/2009 03:00", "25/10/2009 04:00" },
+                    { "28/03/2010 03:00", "31/10/2010 04:00" }, { "27/03/2011 03:00", "30/10/2011 04:00" },
+                    { "25/03/2012 03:00", "28/10/2012 04:00" }, { "31/03/2013 03:00", "27/10/2013 04:00" },
+                    { "30/03/2014 03:00", "26/10/2014 04:00" }, { "29/03/2015 03:00", "25/10/2015 04:00" },
+                    { "27/03/2016 03:00", "30/10/2016 04:00" }, { "26/03/2017 03:00", "29/10/2017 04:00" },
+                    { "25/03/2018 03:00", "28/10/2018 04:00" }, { "31/03/2019 03:00", "27/10/2019 04:00" }}
+					
+2. Implemement trade quality analisys
+ + pending order requested/open price - analisys (on open)
+ + requested TP/executed TP - analisys (on close)
+ + requested SL/executed SL - analisys (on close)
+ + last trade executions quality statistics (show in chart + write to a file (read on EA start and show))
+   (send by email or other channnels)
+ +? averall trade executions quality statistics (possible when running 24*7 everyday without restart;)
+
+
+					
+					
+					
