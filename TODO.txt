@@ -10,10 +10,12 @@ Done 2. Implemement trade quality analisys
      - nope last trade executions quality statistics 
      - nope (write to a file (read on EA start and show))
      - nope (send by email or other channnels)
- Done averall trade executions quality statistics (possible when running 24*7 everyday without restart. Starts clear when EA restarted)
+Done averall trade executions quality statistics (possible when running 24*7 everyday without restart. Starts clear when EA restarted)
  
-3. Equity change stats - Done (overall, last trade. Stats clear on EA restart) 
+Done 3. Equity change stats - (overall, last trade. Stats clear on EA restart) 
 
-4. Send stats by email after every traded event (HTML format) (only if event triggered orders after all opened orders been closed)
+Done 4. Spread during news event trading statistics
+
+5. Send stats by email after every traded event (HTML format) (only if event triggered orders after all opened orders been closed)
     Order executions stats
 	Equity change stats
