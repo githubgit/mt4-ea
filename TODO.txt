@@ -16,6 +16,10 @@ Done 3. Equity change stats - (overall, last trade. Stats clear on EA restart)
 
 Done 4. Spread during news event trading statistics
 
-5. Send stats by email after every traded event (HTML format) (only if event triggered orders after all opened orders been closed)
-    Order executions stats
-	Equity change stats
+Done 5.0 Send stats by email after every traded event 
+    + Order executions stats
+	+ Equity change stats
+	
+	5.1 only if event triggered orders after all opened orders been closed
+	5.2 (HTML format)
+	
