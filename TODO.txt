@@ -1,17 +1,19 @@
 News Trader version 7.02  
-Done list
-1. Implement automatic daylight savings during testing in MT4 (years 2003-2009)
+
+Done 1. Implement automatic daylight savings during testing in MT4 (years 2003-2009)
 	
 TODO List	
-2. Implemement trade quality analisys
- + pending order requested/open price - analisys (on open)
- + requested TP/executed TP - analisys (on close)
- + requested SL/executed SL - analisys (on close)
- + last trade executions quality statistics (show in chart + write to a file (read on EA start and show))
-   (send by email or other channnels)
- +? averall trade executions quality statistics (possible when running 24*7 everyday without restart;)
+Done 2. Implemement trade quality analisys
+ Done pending order requested/open price - analisys (on open) show in chart
+ Done requested TP/executed TP - analisys (on close) show in chart
+ Done requested SL/executed SL - analisys (on close) show in chart
+     - nope last trade executions quality statistics 
+     - nope (write to a file (read on EA start and show))
+     - nope (send by email or other channnels)
+ Done averall trade executions quality statistics (possible when running 24*7 everyday without restart. Starts clear when EA restarted)
+ 
+3. Equity change stats - Done (overall, last trade. Stats clear on EA restart) 
 
-
-					
-					
-					
+4. Send stats by email after every traded event (HTML format) (only if event triggered orders after all opened orders been closed)
+    Order executions stats
+	Equity change stats
