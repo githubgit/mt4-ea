@@ -1,6 +1,7 @@
 News Trader version 7.02  
 
-Done 1. Implement automatic daylight savings during testing in MT4 (years 2003-2009)
+Done 1. Implement automatic daylight savings during testing in MT4 (hardcoded for years 2003-2020)
+Done 1.1 Refactor implenetation to universal daylight savings for testing
 	
 TODO List	
 Done 2. Implemement trade quality analisys
@@ -23,7 +24,11 @@ Done	5.1 only if event triggered orders after all opened orders been closed
 Done	5.2 (HTML format)
 Done    5.3 Traded news release info added to the email report
 
+
+
 2.4 Correctly Save(Read on EA start) all trading quality statistics after traded News Event
-	so when restarting NewsTrader EA does not loose latest statistics information.
+	so uupon MT4 restart NewsTrader EA does not loose latest statistics information.
+	
+Done 3. Fix over weekend non-stop trading calendar update
 
 	
