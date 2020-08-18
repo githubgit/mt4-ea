@@ -1,4 +1,4 @@
 TODO
- 1 Display 1x8, 2x8, 1x7 symbols and their signal
+ Done 1 Display 1x8, 2x8, 1x7 symbols and their signal
  2 Integrate LuXing MTF trend and show it for 1x8, 2x8, 1x7 and reevaluate signal
    (default TFs are H4, H1, M15, M5)

@@ -1,9 +1,9 @@
 //+------------------------------------------------------------------+
-//|                                                  CM_Strength.mq4 |
-//|                        Copyright 2015, MetaQuotes Software Corp. |
+//|                                               My_CM_Strength.mq4 |
+//|                                        Copyright 2020 , Vlad Po  |
 //|                                             https://www.mql5.com |
 //+------------------------------------------------------------------+
-#property copyright "Copyright 2015, MetaQuotes Software Corp."
+#property copyright "Copyright 2020, Vlad Po"
 #property link      "https://www.mql5.com"
 #property version   "1.00"
 #property strict
@@ -17,8 +17,8 @@
 #define UP 1
 
 
-sinput int                       x_axis                     =0;
-sinput int                       y_axis                    =70;
+sinput int    x_axis=0;
+sinput int    y_axis=70;
 
 bool                      UseDefaultPairs            = true;              // Use the default 28 pairs
 string                    OwnPairs                   = "";                // Comma seperated own pair list
@@ -230,37 +230,46 @@ void displayMeter() {
    arrt[0][1] = 0; arrt[1][1] = 1; arrt[2][1] = 2; arrt[3][1] = 3; arrt[4][1] = 4;arrt[5][1] = 5; arrt[6][1] = 6; arrt[7][1] = 7;
    ArraySort(arrt, WHOLE_ARRAY, 0, MODE_DESCEND);
    
-   //now array sorted by the currency strength (1st index=0 the strongest, 1st index=7 - the weakest)
-   string strong = curr[ arrt[0][1] ];// the strongest currency 
-   string weak = curr[ arrt[7][1] ];// the weakest currency 
+   //Array is sorted now by the currency strength (1st index=0 the strongest, 1st index=7 - the weakest)
+   arr2 = arrt[0][1];
+   arr3 = arrt[7][1];
+
+   string strong = curr[ arr2 ];// the strongest currency 
+   string weak = curr[ arr3 ];// the weakest currency 
    string pair1x8 = "", pair1x8_signal = "";
    
-   SymbolInfoString(strong + weak, ENUM_SYMBOL_INFO_STRING);
+   checkSymbol(strong + weak);
    
    if( GetLastError() == 0) { pair1x8 = strong + weak; pair1x8_signal = "BUY";}
    else { pair1x8 = weak + strong;  pair1x8_signal = "SELL"; }
      
    string pair2x8 = "", pair2x8_signal = "";
-   strong = curr[ arrt[1][1] ];// 2nd stromgest 
-   weak = curr[ arrt[7][1] ];// the weakest currency
-   SymbolInfoString(strong + weak, ENUM_SYMBOL_INFO_STRING);
+   arr2 = arrt[1][1];
+   arr3 = arrt[7][1];
+   strong = curr[ arr2 ];// 2nd stromgest 
+   weak = curr[ arr3 ];// the weakest currency
+   
+   checkSymbol(strong + weak);
    
    if( GetLastError() == 0) { pair2x8 = strong + weak; pair2x8_signal = "BUY";}
    else { pair2x8 = weak + strong;  pair2x8_signal = "SELL"; }
    
    string pair1x7 = "", pair1x7_signal = "";
-   strong = curr[ arrt[0][1] ];// the stromgest 
-   weak = curr[ arrt[6][1] ];// 2nd weakest currency
-   SymbolInfoString(strong + weak, ENUM_SYMBOL_INFO_STRING);
+   arr2 = arrt[0][1];
+   arr3 = arrt[6][1];
+   strong = curr[ arr2 ];// the stromgest 
+   weak = curr[ arr3 ];// 2nd weakest currency
+   checkSymbol(strong + weak);
    
    if( GetLastError() == 0) { pair1x7 = strong + weak; pair1x7_signal = "BUY";}
    else { pair1x7 = weak + strong;  pair1x7_signal = "SELL"; }
    
-   //TODO display 1x8, 2x8, 1x7 symbols and their signal
    //FIXME integrate LuXing MTF trend and show it then reevaluate signal
    // default TFs are H4, H1, M15, M5
    
-   for (int m = 0; m < 8; m++) {
+   int m;
+   
+   for (m = 0; m < 8; m++) {
       arr2 = arrt[m][1];
       arr3=(int)arrt[m][2];
       currstrength[m] = arrt[m][0];
@@ -273,9 +282,13 @@ void displayMeter() {
         if(currstrength[m] > prevstrength[m]){SetObjText("Sdir"+IntegerToString(m),CharToStr(233),x_axis+700,(m*18)+y_axis+17,BullColor,12);}
          else if(currstrength[m] < prevstrength[m]){SetObjText("Sdir"+IntegerToString(m),CharToStr(234),x_axis+700,(m*18)+y_axis+17,BearColor,12);}
          else {SetObjText("Sdir"+IntegerToString(m),CharToStr(243),x_axis+700,(m*18)+y_axis+17,clrYellow,12);}
-         
-         
-         }
+    }
+    SetText("pair1x8", "Suppose to "+pair1x8_signal+"  "+pair1x8,x_axis+615,(m*19)+y_axis+17,pair1x8_signal=="BUY"?clrLime:clrOrangeRed,12);
+    m++;
+    SetText("pair2x8", "Suppose to "+pair2x8_signal+"  "+pair2x8,x_axis+615,(m*19)+y_axis+17,pair2x8_signal=="BUY"?clrLime:clrOrangeRed,12);
+    m++;
+    SetText("pair1x7", "Suppose to "+pair1x7_signal+"  "+pair1x7,x_axis+615,(m*19)+y_axis+17,pair1x7_signal=="BUY"?clrLime:clrOrangeRed,12);
+    
  ChartRedraw(); 
 }
 color color_for_profit(double total) 
@@ -294,6 +307,11 @@ color color_for_profit(double total)
       return (clrYellow);       
    return(clrSteelBlue);
   }
+
+
+string checkSymbol(string symbol){
+   return SymbolInfoString(symbol, SYMBOL_DESCRIPTION);
+}
 
 double currency_strength(string pair) {
    int fact;
