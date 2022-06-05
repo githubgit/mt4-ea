@@ -5,30 +5,25 @@ Done 1.1 Refactor implenetation to universal daylight savings for testing
 	
 TODO List	
 Done 2. Implemement trade quality analisys
- Done 2.1 pending order requested/open price - analisys (on open) show in chart
- Done 2.2 requested TP/executed TP - analisys (on close) show in chart
-	  2.3 requested SL/executed SL - analisys (on close) show in chart
-     Done + trading executions quality statistics 
-
-Done averall trade executions quality statistics (possible when running 24*7 everyday without restart. Starts clear when EA restarted)
- 
-Done 3. Equity change stats - (overall, last trade. Stats clear on EA restart) 
+ Done 2.1 Pending order requested/open price - analisys (on open) show in chart
+ Done 2.2 Requested TP/executed TP - analisys (on close) show in chart
+ Done 2.3 Requested SL/executed SL - analisys (on close) show in chart
+ Done 2.4 Averall trade executions quality statistics (possible when running 24*7 everyday without restart. Starts clear when EA restarted)
+ Done 2.5 Correctly save (and read on EA start) all trading quality statistics after traded News Event
+	     so upon MT4 restart NewsTrader EA does not loose latest statistics information.
+	
+Done 3. Equity change stats - (overall, last trade)
 
 Done 4. Spread during news event trading statistics
 
 Done 5.0 Send stats by email after every traded event 
-    + Order executions stats
-	+ Equity change stats
+         + Orders execution stats
+	     + Equity change stats
 	
-Done	5.1 only if event triggered orders after all opened orders been closed
-Done	5.2 (HTML format)
+Done	5.1 Send email only if news event triggered orders after all opened orders been closed
+Done	5.2 Email in HTML format
 Done    5.3 Traded news release info added to the email report
-
-
-
-2.4 Correctly Save(Read on EA start) all trading quality statistics after traded News Event
-	so uupon MT4 restart NewsTrader EA does not loose latest statistics information.
 	
-Done 3. Fix over weekend non-stop trading calendar update
+Done 6. Fix over weekend non-stop trading calendar update
 
 	
