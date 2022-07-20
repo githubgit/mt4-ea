@@ -79,7 +79,7 @@ int start()
    }else {
       zeroMicroSec = GetMicrosecondCount();
       
-      if(fileInit){
+      if(fileInit && AccountNumber()!=0){
           initFilename();
           fileInit = false;
       }
