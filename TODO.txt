@@ -26,4 +26,7 @@ Done    5.3 Traded news release info added to the email report
 	
 Done 6. Fix over weekend non-stop trading calendar update
 
+7 Improve Ticks logging with custom TickHistory Indi
+7.1 Start/stop TickHistory Indi around news trading time only
+
 	
