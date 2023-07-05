@@ -1,0 +1,66 @@
+ExpertName=NewsTrader_v7.02
+Magic=7777777
+Slippage=1
+calInputs====== Calendar settings =====
+CalendarDirectory=FX News
+CalendarName=Investing.com
+TestCalName=2018
+WebAdress=https://ec.forexprostools.com/
+UseAutoTimeZone=true
+TimeZone=2
+ReadFromFile=false
+PrintInLog=true
+DisplayLines=true
+DisplayText=true
+DisplayEvents=true
+LineStyle=3
+timeInputs====== Timing settings =====
+SecBeforeNews=20.0
+OrderDuration=140
+ProcessTime=10.0
+SessionEndTime=23:20
+ordInputs====== Order settings =====
+OrdersNum=23
+CandlesToCheck=1
+PendOrdGap=30
+OrdersStep=30.0
+DeleteOpposite=true
+TrailOpposite=true
+CloseOnNewEvent=true
+InitialStop=20.0
+TakeProfit=150.0
+TrailingStop=0.0
+TrailingStep=0.0
+BreakEven=90.0
+PipsLock=60.0
+TrailTP======== Dynamic TP ========
+DeltaTP=10.0
+MoveSL=40.0
+ECN_Mode=false
+DisplayLevels=true
+ShowComments=true
+ShowCalendar=true
+SaveHTMFormat=false
+currencyFilter====== Currency Filter(None-off, color-on) =====
+OnlySymbolNews=true
+EUR=-1
+USD=65535
+JPY=-1
+GBP=-1
+CHF=-1
+AUD=-1
+CAD=4678655
+NZD=-1
+CNY=-1
+impFilter====== Importance Filter =====
+NewsImportance=H
+chartNewsOnlyColors==== Importance Color OnlySymbolNews=true  =====
+LowColor=32768
+MidleColor=16711680
+HighColor=255
+mmInputs====== Money Management settings =====
+MM_Mode=2
+Lots=0.01
+RiskFactor=1.5
+MaxLots=100.0
+NotifyByEmail=true
